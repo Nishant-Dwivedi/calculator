@@ -19,7 +19,7 @@
         }
 
         function divide (a, b) {
-            return Number(a/b)
+            return Number((Math.trunc((a/b)*1000))/1000)
         }
 
         function multiply (a, b) {
@@ -71,11 +71,14 @@
                 console.log(num1,operation, num2, result);
             }
             // if clicked btn is an integer AND OPERATION VAR is NOT empty, i.e it's num2
-            else if (Number.isInteger(Number(e.target.innerText)) && operation !== ""){
-                display.innerText= ""
+            else if (Number.isInteger(Number(e.target.innerText)) && operation !== ""){ 
+                // clear innerText so as to display var2 without concatinating with result(?? var2 concatenates with previous result value without this step if you chain operations)
+                if (display.innerText == result) {
+                    display.innerText = ""
+                }
                 display.innerText += e.target.innerText
                 num2 += e.target.innerText
-                console.log(num1,operation, num2, result);
+                console.log(display.innerText);
             }
             // if the clicked btn represents a non integer {/, *, -, +, C or =}
             else if (!Number.isInteger(Number(e.target.innerText))){
@@ -100,6 +103,7 @@
                     if (num2 == ""){
                     display.innerText= ""
                     operation = e.target.innerText;
+                    
                     } 
                     else{
                         // when equal isn't clicked and another operation is performed (ex, 1 + 2 + 5), the operator btn (/, *, -, +) is gonna have to evaluate the value of previous expression (1 + 2)
@@ -107,8 +111,8 @@
                         num1 = evaluate(num1, num2, operation)
                         num2 = ""
                         display.innerText= ""
-                        display.innerText= `${result}`
                         operation = e.target.innerText;   
+                        display.innerText= `${result}`
                         console.log(num1,operation, num2, result);     
                     }
                     
