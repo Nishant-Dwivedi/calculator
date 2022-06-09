@@ -21,7 +21,7 @@ Users should be able to:
 ![](./Screenshot_2022-06-09_13-41-36.png)
 
 
-### My thought about the project
+### My thoughts about the project
 
 While the css part of this project was quite simple, the javascript part was on the difficult side. I got the initial draft right quite early, where i was able to perform operations without chaining and display a result.
 
