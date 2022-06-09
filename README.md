@@ -18,7 +18,7 @@ Users should be able to:
 
 ### Screenshots
 
-![](./Screenshot_2022-06-09_13-41-36.png)
+![](./screenshot.png)
 
 
 ### My thoughts about the project
